@@ -23,7 +23,7 @@ pipeline {
       stage('Docker Deploy') {
            steps {
               sshagent(['tomcat-cred']) {
-                     sh "ssh -o StrictHostKeyChecking=no ec2-user@172.31.42.164 docker run -d -p 8080:880 --name hiring routhu0075/hiring:0.0.3"
+                     sh "ssh -o StrictHostKeyChecking=no ec2-user@172.31.42.164 docker run -d -p 8080:8080 --name hiring routhu0075/hiring:0.0.3"
                     }
                } 
             }
