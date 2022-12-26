@@ -7,15 +7,15 @@ pipeline {
                 sh "mvn clean package"
                   }
             }
-      stage('Docker build') {
+      stage('Docker Build') {
             steps {
-                sh "docker run -d -p routhu0075/hiring:0.0.2 ."
+                sh "docker build -t routhu0075/hiring:0.0.2 ."
             }
         }
-      stage('Docker push') {
+      stage('Docker Push') {
            steps {
                 sh "docket login -u routhu0075 -p Ganesh0075"
-                sh "Docker push"
+                sh "docker push routhu0075/hiring:0.0.2"
             }
         }
     }
