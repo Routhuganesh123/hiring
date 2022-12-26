@@ -14,7 +14,7 @@ pipeline {
         }
       stage('Docker Push') {
            steps {
-                sh "docket login -u routhu0075 -p Ganesh0075"
+                sh "docker login -u routhu0075 -p Ganesh0075"
                 sh "docker push routhu0075/hiring:0.0.2"
             }
         }
